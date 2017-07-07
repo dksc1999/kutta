@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+ <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transaction</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{t}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for i in t %}
+                <tr>
+                    <td>{{i["symbol"]}}</td>
+                    <td>{{i["name"]}}</td>
+                    <td>{{i["shares"]}}</td></td>
+                    <td>{{i["prices"]}}</td>
+                    <td>{{i["transaction"]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+{% endblock %}    
